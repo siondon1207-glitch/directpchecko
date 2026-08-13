@@ -1,23 +1,724 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "2026 현대 쏘나타 디 엣지",
+      "image": [
+        "https://yourdomain.com/images/sonata-the-edge.jpg"
+      ],
+      "description": "2026년형 현대자동차 쏘나타 디 엣지의 파워트레인별 가격, 옵션 사양, 하이브리드 세제혜택 적용가 및 신규 가성비 S 트림을 정밀 분석한 최종 견적 정보 페이지입니다.",
+      "brand": {
+        "@type": "Brand",
+        "name": "현대자동차"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "url": "https://yourdomain.com/sonata-price",
+        "priceCurrency": "KRW",
+        "lowPrice": "28260000",
+        "highPrice": "41370000",
+        "offerCount": "12",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "2026 쏘나타 디 엣지 가솔린 2.0 프리미엄",
+            "price": "28260000",
+            "priceCurrency": "KRW",
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "2026 쏘나타 디 엣지 가솔린 2.0 S",
+            "price": "29560000",
+            "priceCurrency": "KRW",
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "2026 쏘나타 디 엣지 1.6 터보 S",
+            "price": "30220000",
+            "priceCurrency": "KRW",
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "2026 쏘나타 디 엣지 하이브리드 S",
+            "price": "33710000",
+            "priceCurrency": "KRW",
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.9;
+      background-color: #f5f7fa;
+      color: #2e384d;
+      word-break: keep-all;
+    }
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #0f172a);
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin: 0 0 1rem 0;
+      letter-spacing: -0.05em;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    nav {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 0;
+      overflow-x: auto;
+    }
+    nav a {
+      display: block;
+      padding: 1.2rem 0.5rem;
+      color: #475569;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s, border-bottom 0.2s;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    nav a:hover {
+      color: #1e3a8a;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+    main {
+      background-color: white;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
+    section {
+      margin-bottom: 3.5rem;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 2.5rem;
+    }
+    section:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    h2 {
+      color: #0f172a;
+      font-size: 1.85rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      border-left: 5px solid #1e3a8a;
+      padding-left: 12px;
+      letter-spacing: -0.03em;
+    }
+    h3 {
+      color: #1e3a8a;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      text-align: justify;
+      color: #334155;
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+    .highlight-box {
+      background-color: #f8fafc;
+      border-left: 4px solid #1e3a8a;
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+    }
+    .highlight-box p {
+      margin: 0;
+      font-size: 1rem;
+      color: #1e293b;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+    }
+    th, td {
+      padding: 1.1rem;
+      border: 1px solid #e2e8f0;
+      text-align: center;
+    }
+    th {
+      background-color: #1e3a8a;
+      color: white;
+      font-weight: 600;
+    }
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    .chart-container {
+      background-color: #f1f5f9;
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+    }
+    .chart-row {
+      margin-bottom: 1.5rem;
+    }
+    .chart-row:last-child {
+      margin-bottom: 0;
+    }
+    .chart-label {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.95rem;
+    }
+    .chart-bar-bg {
+      background-color: #cbd5e1;
+      height: 24px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .chart-bar-fill {
+      background: linear-gradient(90deg, #3b82f6, #1e3a8a);
+      height: 100%;
+      border-radius: 12px;
+      transition: width 1s ease-in-out;
+    }
+    .calculator-container {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 3rem 0;
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .form-group label {
+      font-weight: 600;
+      color: #0f172a;
+      font-size: 0.95rem;
+    }
+    .form-group select, .form-group input {
+      padding: 0.8rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: white;
+    }
+    .calc-result {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .calc-result-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #93c5fd;
+    }
+    .calc-result-monthly {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+    }
+    .keyword-tags {
+      margin: 2.5rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .keyword-tags span {
+      background-color: #f1f5f9;
+      color: #475569;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      border: 1px solid #e2e8f0;
+    }
+    dl dt {
+      font-weight: 600;
+      margin-top: 1.5rem;
+      cursor: pointer;
+      color: #0f172a;
+      background-color: #f8fafc;
+      padding: 1.1rem;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      transition: background-color 0.2s;
+      position: relative;
+    }
+    dl dt:hover {
+      background-color: #f1f5f9;
+    }
+    dl dd {
+      margin: 0.5rem 0 1.5rem 0;
+      padding: 1.2rem;
+      background-color: #ffffff;
+      border-left: 3px solid #1e3a8a;
+      font-size: 0.98rem;
+      color: #334155;
+      display: none;
+    }
+    dl dt.active + dd {
+      display: block;
+    }
+    .external-link-container {
+      background-color: #f1f5f9;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+    }
+    .external-link {
+      display: inline-block;
+      color: #1e3a8a;
+      font-weight: 600;
+      margin: 0.5rem 0;
+      text-decoration: none;
+      border-bottom: 2px solid #1e3a8a;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .external-link:hover {
+      color: #3b82f6;
+      border-color: #3b82f6;
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      font-size: 0.9rem;
+      color: #64748b;
+      background-color: #0f172a;
+      color: #94a3b8;
+      border-top: 1px solid #1e293b;
+    }
+    .options-checkboxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .options-checkboxes label {
+      font-size: 0.9rem;
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>2026 쏘나타 가격표 및 트림별 옵션 선택 완벽 가이드</h1>
+    <p>현대자동차 대표 중형 세단인 쏘나타의 가솔린, LPi, 하이브리드 파워트레인별 상세 출시 가격과 신규 추가된 가성비 S 트림 옵션 조합 추천 및 취등록세 포함 실구매 견적까지 명확하고 투명하게 제공합니다.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#시장동향">시장 동향</a></li>
+      <li><a href="#가격안내">트림별 상세 가격</a></li>
+      <li><a href="#S트림분석">신규 S 트림 분석</a></li>
+      <li><a href="#경제성비교">파워트레인 비교</a></li>
+      <li><a href="#실시간계산기">가상 계산기</a></li>
+      <li><a href="#커뮤니티후기">오너 평가 및 후기</a></li>
+      <li><a href="#자주묻는질문">자주 묻는 질문</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
     <main>
-      <h1>Home page</h1>
+      <section id="시장동향">
+        <h2>2026년형 쏘나타 디 엣지 시장 동향 및 전망</h2>
+        <p>현대자동차의 헤리티지를 상징하는 대표 중형 세단 브랜드인 쏘나타는 지속적인 변신을 통하여 세그먼트 내 최고의 경쟁력을 입증하고 있습니다. 특히 현행 쏘나타 DN8 페이스리프트 모델인 쏘나타 디 엣지는 수평형 LED 램프와 파노라믹 커브드 디스플레이를 선제적으로 도입하여 디자인과 첨단 편의 사양 면에서 한 단계 높은 성숙도를 완성하였습니다. 2026년도에 들어서면서 현대자동차는 시장의 다양한 피드백을 수용하여 연식 변경 모델인 2026 쏘나타 디 엣지를 공식 출시하고 판매 라인업을 보강하였습니다.</p>
+        <p>이번 연식 변경의 핵심은 기본형 트림인 프리미엄과 상위 트림인 익스클루시브 사이에 가성비를 타깃으로 한 신규 라인업인 에스 트림(S 트림)을 신설한 것입니다. 이는 기아 K5 중형세단 비교 군이나 도요타 캠리 하이브리드 외제차 비교 영역에서 쏘나타만의 확실한 가격 우위와 상품 구성 능력을 과시하려는 전략적 포석입니다. 고물가 고금리 시대를 맞이하여 합리적인 실구매 예상 금액을 원하는 합리적인 성향의 예비 오너들에게 이와 같은 현대자동차의 상품 구성 다변화는 매우 긍정적인 요소로 작용하고 있습니다.</p>
+        <p>중형 세단 시장 안에서 독보적인 자리를 점하고 있는 쏘나타는 이제 단순한 이동 수단을 넘어 하이브리드 e-Motion Drive 시스템과 고속도로 주행 보조 시스템 등 프리미엄 준대형급 세단에 준하는 디지털 편의 사양까지 대거 수용하고 있습니다. 소비자가 대리점을 통하여 공식 계약을 신청하거나 인터넷 온라인 사이트를 거쳐 다이렉트 신차 금융 상품으로 가입을 타진할 때 파워트레인의 종류와 세부 트림 구성 요소를 사전에 숙지해 두는 것은 가장 손쉽게 예산을 아끼는 현명한 선택 방법이 될 것입니다.</p>
+      </section>
+
+      <section id="가격안내">
+        <h2>파워트레인별 공식 판매 가격표 정밀 분석</h2>
+        <p>2026 쏘나타 디 엣지의 파워트레인은 전통적인 가솔린 2.0 모델, 경제성과 8단 자동변속기의 부드러운 드라이빙을 선사하는 1.6 터보 모델, 택시 및 법인용 외에도 일반 판매 비중이 꾸준히 높은 LPG 2.0 모델, 스포티한 감성의 끝판왕인 N라인 모델, 그리고 압도적인 연료 효율을 제공하는 2.0 하이브리드 모델 등으로 상세 분류됩니다. 개소세 5퍼센트 기준 및 친환경차 세제혜택 적용 여부에 따라 실제 구입 시 지불하는 정산 금액과 비용에 차이가 발생할 수 있으므로, 하단의 가격 비교 표를 통해 직관적으로 비교해 보시기 바랍니다.</p>
+        
+        <h3>1. 가솔린 2.0 및 1.6 터보 가솔린 트림별 가격표</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>구분 및 모델 트림</th>
+              <th>가솔린 2.0 판매 가격</th>
+              <th>가솔린 1.6 터보 판매 가격</th>
+              <th>주요 장비 및 탑재 특징</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>프리미엄 (Premium)</td>
+              <td>28,260,000 원</td>
+              <td>28,980,000 원</td>
+              <td>기본 안전 기술, 9에어백, LED 헤드램프, 듀얼 풀오토 에어컨</td>
+            </tr>
+            <tr>
+              <td>S (에스 트림)</td>
+              <td>29,560,000 원</td>
+              <td>30,220,000 원</td>
+              <td>12.3인치 커브드 디스플레이, 1열 통풍, 스마트 크루즈 컨트롤, HDA</td>
+            </tr>
+            <tr>
+              <td>익스클루시브 (Exclusive)</td>
+              <td>32,510,000 원</td>
+              <td>33,180,000 원</td>
+              <td>서라운드 뷰 모니터, 후측방 모니터, 스마트폰 무선 충전</td>
+            </tr>
+            <tr>
+              <td>인스퍼레이션 (Inspiration)</td>
+              <td>35,360,000 원</td>
+              <td>36,030,000 원</td>
+              <td>나파 가죽 시트, 프로젝션 헤드램프, 순정 빌트인 캠 2 탑재</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>2. 가솔린 2.0 하이브리드 트림별 가격표 (세제혜택 반영 기준)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>하이브리드 세부 트림</th>
+              <th>공식 세제혜택 적용가</th>
+              <th>연비 수준 (복합 연비 기준)</th>
+              <th>비고 및 특이사항</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>하이브리드 프리미엄</td>
+              <td>32,700,000 원</td>
+              <td>19.4 km/L (16인치)</td>
+              <td>하이브리드 기본 전용 시스템 및 e-Motion 가동</td>
+            </tr>
+            <tr>
+              <td>하이브리드 S</td>
+              <td>33,710,000 원</td>
+              <td>19.4 km/L (16인치)</td>
+              <td>스마트 편의 사양 및 안전 시스템 최적화 패키지 적용</td>
+            </tr>
+            <tr>
+              <td>하이브리드 익스클루시브</td>
+              <td>36,740,000 원</td>
+              <td>17.8 km/L (17인치)</td>
+              <td>동승석 릴렉션 컴포트 시트, 후측방 모니터 시스템 기본화</td>
+            </tr>
+            <tr>
+              <td>하이브리드 인스퍼레이션</td>
+              <td>39,790,000 원</td>
+              <td>17.1 km/L (18인치)</td>
+              <td>헤드업 디스플레이, 서라운드 뷰, 천연 나파가죽 최상급 사양</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="highlight-box">
+          <p>LPG 2.0 엔진을 사용하는 쏘나타 디 엣지 LPi 2.0 일반 판매용 가격은 프리미엄 2,896만 원, S 트림 3,026만 원, 익스클루시브 3,321만 원으로 책정되어 있습니다. 또한 쏘나타 디 엣지 LPi 2.0 장애인용 및 LPi 2.0 렌터카 사양 역시 면세 조건이나 용도에 맞게 실속형 요금제로 별도 구성되어 사업자나 특별 면세 혜택 자격 오너들에게 폭넓은 초이스를 제공하고 있습니다.</p>
+        </div>
+      </section>
+
+      <section id="S트림분석">
+        <h2>신설된 가성비 S 트림 집중 분석</h2>
+        <p>2026 쏘나타 디 엣지의 최대 승부처는 단연 새롭게 도입된 S(Safety & Smart) 트림입니다. 기존의 프리미엄 트림은 2,800만 원대의 매력적인 엔트리 금액을 갖추고 있었으나, 계기판 내부의 아날로그식 구성이나 내비게이션의 소형 패널 디자인 등 시각적인 부분과 필수 지능형 안전 기술들의 기본화에 있어 아쉬운 평가를 받아온 바 있습니다. 반면, 익스클루시브 트림으로 이동 시 가격 장벽이 한 번에 400만 원 가깝게 수직 상승하여 많은 실수요자들이 중간 타협점을 찾지 못하고 방황했던 것이 사실입니다.</p>
+        <p>현대자동차는 이러한 소비자 목소리를 전면 수용하여 프리미엄에서 단 130만 원을 증액한 가솔린 2.0 S 트림(2,956만 원) 및 1.6 터보 S 트림(3,022만 원)을 완성해 냈습니다. S 트림의 주요 특장점은 다음과 같습니다.</p>
+        <p>첫째, 12.3인치 디지털 클러스터와 12.3인치 정품 내비게이션 패널이 일체형 구조로 부드럽게 이어지는 파노라믹 커브드 디스플레이를 전격 기본 장착해 차량의 고급감을 비약적으로 제고했습니다.</p>
+        <p>둘째, 주행 편의를 크게 좌우하는 스마트 크루즈 컨트롤(스탑앤고 가동 기능 포함)과 내비게이션 기반 고속도로 주행 보조(HDA), 그리고 차로 유지 보조 기능을 대거 기본 품목으로 상향 조정했습니다.</p>
+        <p>셋째, 무더운 여름철 한국 주행 환경에서 절대 놓칠 수 없는 1열 앞좌석 통풍시트와 공조 연동 자동 제어 장치 및 듀얼 풀오토 에어컨을 탑재하여 거주성을 한 단계 더 고도화했습니다.</p>
+        <p>가장 대중적이며 추천 가치가 높은 쏘나타 디 엣지 1.6 터보 S 모델을 선택하고 여기에 후방 주차 충돌방지 보조와 원격 스마트 주차 보조 기능 등이 연계된 파킹 어시스트 옵션 패키지만 가볍게 추가하는 방식으로 총액 3,100만 원대의 견적을 설계하면 수입 엔트리 중형차 혹은 경쟁 중형 세단 세그먼트를 뛰어넘는 극강의 가성비를 경험할 수 있습니다.</p>
+      </section>
+
+      <section id="경제성비교">
+        <h2>가솔린 vs 하이브리드 경제성 분석 및 유지비 그래프</h2>
+        <p>차량 선택 과정에서 가장 고민스러운 대목은 초기 유류비 절감 혜택이 뛰어난 쏘나타 하이브리드 복합 연비 모델을 살 것인가, 아니면 차량 가격 자체가 저렴한 일반 가솔린 2.0 혹은 1.6 터보 버전을 구매할 것인가 하는 문제일 것입니다. 실제로 쏘나타 하이브리드 세제혜택 적용가 가격은 동일 트림 가솔린 모델 대비 대략 400만 원에서 450만 원가량 높게 포지셔닝 되어 있습니다. 이 비용 격차를 연료비 차액으로 온전히 회수하려면 과연 몇 년의 주행 기간과 거리가 필요한지 체계적인 계산이 필요합니다.</p>
+        <p>아래 막대그래프 시각 데이터를 통하여 각 파워트레인별 연료 효율성을 간접 비교해 보시기 바랍니다.</p>
+
+        <div class="chart-container">
+          <div class="chart-row">
+            <div class="chart-label">
+              <span>2.0 하이브리드 복합 연비 (16인치 기준)</span>
+              <span>19.4 km/L</span>
+            </div>
+            <div class="chart-bar-bg">
+              <div class="chart-bar-fill" style="width: 100%;"></div>
+            </div>
+          </div>
+          <div class="chart-row">
+            <div class="chart-label">
+              <span>1.6 가솔린 터보 복합 연비 (17인치 기준)</span>
+              <span>13.5 km/L</span>
+            </div>
+            <div class="chart-bar-bg">
+              <div class="chart-bar-fill" style="width: 69.5%;"></div>
+            </div>
+          </div>
+          <div class="chart-row">
+            <div class="chart-label">
+              <span>2.0 가솔린 자연흡기 복합 연비 (17인치 기준)</span>
+              <span>12.6 km/L</span>
+            </div>
+            <div class="chart-bar-bg">
+              <div class="chart-bar-fill" style="width: 64.9%;"></div>
+            </div>
+          </div>
+          <div class="chart-row">
+            <div class="chart-label">
+              <span>LPG 2.0 일반 복합 연비 (16인치 기준)</span>
+              <span>9.7 km/L</span>
+            </div>
+            <div class="chart-bar-bg">
+              <div class="chart-bar-fill" style="width: 50%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <p>연 평균 주행거리가 15,000km 내외인 오너를 기준으로 휘발유 유류 단가를 적용해 시뮬레이션을 돌려보면, 하이브리드 엔진이 가솔린 2.0 모델 대비 연간 유류비를 약 80만 원에서 100만 원가량 아낄 수 있는 장점이 있습니다. 이 경우 세금 혜택 및 유류비를 고려해 약 4년에서 5년 이상 꾸준히 주행할 경우 차량 가격 차이를 완벽히 상쇄하고 순수 유지 관리 단계에서 이득을 보는 구조가 형성됩니다. 만약 일일 주행거리가 극도로 짧고 시내 정체 구간보다 시속 80km 이상의 고속 항속 비율이 지배적이라면 가솔린 1.6 터보 S 모델이 오히려 정숙성과 우수한 고속 크루징 감각 측면에서 더 정답에 가까운 대안이 될 수 있습니다.</p>
+      </section>
+
+      <section id="실시간계산기">
+        <h2>체류시간 극대화용 실시간 가상 계산기</h2>
+        <p>현대자동차 공식 대리점이나 인터넷 신차 장기렌트 에이전시 상담 센터에 접속하기 전, 나에게 딱 맞는 2026 쏘나타의 최종 실구매 가격을 직접 산출해 보세요. 아래의 지능형 계산기 도구를 사용하면 선택한 엔진 유형, 세부 트림, 핵심 추가 옵션 사양과 더불어 취등록세 7퍼센트 조건 및 할부 납입 설정에 따른 대략적인 금융 견적 결과를 빠르게 얻어낼 수 있습니다.</p>
+        
+        <div class="calculator-container">
+          <div class="calc-grid">
+            <div class="form-group">
+              <label for="engine">1. 엔진 파워트레인 선택</label>
+              <select id="engine" onchange="updateTrims()">
+                <option value="gasoline20">가솔린 2.0 (자연흡기)</option>
+                <option value="turbo16">가솔린 1.6 터보</option>
+                <option value="lpg20">LPG 2.0 일반판매용</option>
+                <option value="hybrid">가솔린 2.0 하이브리드</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="trim">2. 세부 모델 트림 선택</label>
+              <select id="trim" onchange="calculatePrice()">
+                <option value="premium">프리미엄</option>
+                <option value="s">S (에스 트림)</option>
+                <option value="exclusive">익스클루시브</option>
+                <option value="inspiration">인스퍼레이션</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>3. 개별 선호 추가 옵션 선택</label>
+              <div class="options-checkboxes">
+                <label><input type="checkbox" id="opt_sunroof" value="1190000" onchange="calculatePrice()"> 파노라마 선루프 (119만)</label>
+                <label><input type="checkbox" id="opt_hud" value="890000" onchange="calculatePrice()"> 헤드업 디스플레이 (89만)</label>
+                <label><input type="checkbox" id="opt_parking" value="1680000" onchange="calculatePrice()"> 파킹 어시스트 (168만)</label>
+                <label><input type="checkbox" id="opt_leather" value="380000" onchange="calculatePrice()"> 나파 가죽 시트 (38만)</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="installment">4. 할부 기간 설정 (월 납입금 계산용)</label>
+              <select id="installment" onchange="calculatePrice()">
+                <option value="0">전액 일시불 (이자 없음)</option>
+                <option value="36">36개월 원리금균등 (금리 연 4.5퍼센트)</option>
+                <option value="48">48개월 원리금균등 (금리 연 4.8퍼센트)</option>
+                <option value="60">60개월 원리금균등 (금리 연 5.0퍼센트)</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="calc-result" style="margin-top: 2rem;">
+            <div>예상 최종 실구매 가격 (차량가 + 취등록세 7% 합산)</div>
+            <div id="total_price" class="calc-result-price">0 원</div>
+            <div id="monthly_payment" class="calc-result-monthly">할부 조건 적용 시 월 납입금: 0 원</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="커뮤니티후기">
+        <h2>오너 평가 및 주요 커뮤니티 여론 동향 분석</h2>
+        <p>실제 쏘나타를 출고하여 장기간 탑승하고 있는 실소유자들의 내돈내산 가감 없는 생생한 소감은 차량 평가에 있어 가장 주도적인 기준이 됩니다. 국내 주요 자동차 커뮤니티인 보배드림 채널과 젊은 연령층 소비 비율이 밀집된 펨코, 에펨코리아 및 격식 없는 진솔한 대화가 오가는 디시인사이드 커뮤니티 내의 쏘나타 DN8 페이스리프트 모델 실질 라이더 평판을 정밀 조사해 보았습니다.</p>
+        <p>먼저 디자인과 실내 공간 레이아웃 분야에서는 긍정적인 평가가 우위를 점하고 있습니다. 전면부를 장식하는 우아한 일자형 램프는 미래지향적인 아이덴티티를 물씬 풍기며, 1열 좌석뿐 아니라 2열 뒷좌석 무릎 공간도 광활할 정도로 여유로워 중형 세단 명가 다운 현대자동차 공간 설계 기술에 높은 점수를 부여하는 모양새입니다. 주행 시 지상고 설정이나 서스펜션 세팅 면에서도 과거 통통 튀던 이질감을 한층 억제하고 탄력적이면서 부드러운 승차감을 확보하여 가벼운 시내 정체 구간은 물론 고속 주행에서도 높은 피로 완화 성능을 보여준다는 평입니다.</p>
+        <p>반면 단점이나 불만 사항도 여전히 관찰됩니다. 쏘나타 디 엣지 가솔린 2.0 프리미엄 사양이나 기본 모델의 경우 여전히 내장재 일부에 하드한 플라스틱 비중이 높아 가벼운 이음이나 소리가 발생할 소지가 있다는 의견이 디시인사이드 자동차 갤러리에 종종 등재됩니다. 또한 1.6 터보 가솔린 모델은 정차 후 재출발 시 일어나는 미세한 울컥거림 현상을 지적하는 에펨코리아 실소유 오너들의 토로가 눈에 띕니다. 더불어 하이브리드 엔진은 한겨울철 저온 구동 시 배터리 활성화 효율 저하로 인한 엔진 소음 유입 문제가 심심찮게 대두되나, 이 역시 전체적인 고효율 하이브리드 복합 연비라는 거대한 경제성 강점에 의해 대체로 상쇄되는 경향을 보이고 있습니다.</p>
+      </section>
+
+      <section id="구매가이드">
+        <h2>스마트한 쏘나타 구매 요령 및 성지 좌표 찾는 방법</h2>
+        <p>합리적인 실구매 예산 내에서 쏘나타 가격 부담을 낮춰 구매하고 싶다면, 정해진 권장가격 그대로 전액 지불하기보다 온라인이나 다이렉트 전문 루트를 탐색해 보는 습관이 중요합니다. 비정상적인 유통 수수료나 카마스터 개별 수수료를 한 단계 걷어낸 신차 장기렌트 또는 자동차 리스 제휴 프로모션을 활용하면 공식 할인 조건 외에도 에이전트 업체의 특별 제휴 혜택과 사은품, 그리고 일시적 캐시백 성격의 현금지원 혜택까지 골고루 누려볼 수 있습니다.</p>
+        <p>또한, 신용카드 오토캐시백 플랫폼이나 카카오톡 플러스친구 제휴 채널을 통한 견적 비교는 물론 최근에는 토스 앱 같은 간편 자산관리 영역에서도 차량 즉시출고 리스트 및 한정 특가 판매 정보를 상시 업데이트하고 있습니다. 가성비를 최우선으로 삼는 현명한 오너들은 보배드림 협력점이나 지역별로 숨겨진 신차 구매 성지 혹은 가격 조건이 우수한 대리점 좌표 정보를 서로 활발하게 공유하므로, 이러한 인터넷 정보망을 계약 신청 전에 사전 검색해 활용하는 적극적인 태도가 비용 세이브의 지름길이라 하겠습니다.</p>
+        
+        <div class="external-link-container">
+          <h3>공인 신뢰성 기반 공식 및 권위 사이트 링크 안내</h3>
+          <p>현대 쏘나타와 관련하여 한층 입체적이고 검증된 자료 분석, 역사 및 상세 견적 시뮬레이션 데이터는 아래의 신뢰도 높은 주요 포털을 통하여 공식 확인하실 수 있습니다.</p>
+          <a href="https://directpcheckp.koreahankang.com" target="_blank" rel="noopener noreferrer" class="external-link">첫째, 쏘나타 실시간 견적 및 프로모션 가상 정산 데이터 분석</a><br>
+          <a href="https://namu.wiki/w/현대_쏘나타" target="_blank" rel="noopener noreferrer" class="external-link">둘째, 현대자동차 쏘나타 연대기 및 탑재 플랫폼 상세 분석 정보 (나무위키)</a><br>
+          <a href="https://www.hyundai.com/kr/ko/e/vehicles/sonata/intro" target="_blank" rel="noopener noreferrer" class="external-link">셋째, 현대자동차 공식 쏘나타 브랜드 소개 및 견적 페이지 바로가기</a>
+        </div>
+      </section>
+
+      <section id="자주묻는질문">
+        <h2>자주 묻는 질문 (FAQ)</h2>
+        <dl>
+          <dt tabindex="0" aria-expanded="false">Q. 2026년도 신규 가성비 S 트림과 프리미엄 트림의 가장 결정적인 차이점은 무엇인가요?</dt>
+          <dd>S 트림은 프리미엄 대비 단 130만 원 정도가 추가되지만, 아날로그식 계기판 패널 구조를 탈피하고 12.3인치 디지털 클러스터와 12.3인치 고화질 내비게이션이 매끄럽게 연결되는 파노라믹 커브드 디스플레이를 완벽히 탑재해 줍니다. 아울러 스마트 크루즈 컨트롤, 앞좌석 1열 시트 통풍 기능, ECM 전자식 룸미러, 듀얼 풀오토 자동 에어컨 및 하이패스 정산 카드 단말기 등이 온전히 내장되므로 체감 편의성이 압도적으로 개선되는 가치를 자랑합니다.</dd>
+
+          <dt tabindex="0" aria-expanded="false">Q. 쏘나타 디 엣지의 파워트레인별 대략적인 출고 대기 및 예상 납기는 어느 정도인가요?</dt>
+          <dd>가솔린 2.0 모델과 1.6 터보 가솔린 모델 및 LPi LPG 라인업은 전국 대리점 및 즉시출고 센터를 기준으로 즉시출고가 원활하게 지원되거나 늦어도 1개월에서 2개월 내로 신속한 인도 작업이 마무리되는 추세입니다. 다만, 반도체 및 하이브리드 전용 모터, 인버터 수급 등 높은 조립 난도가 수반되는 2.0 하이브리드 모델의 경우는 고객 인도까지 약 2.5개월에서 최대 3.5개월 내외의 타임라인이 평균적으로 필요할 수 있습니다.</dd>
+
+          <dt tabindex="0" aria-expanded="false">Q. 쏘나타 풀옵션 실구매 가격은 평균 얼마 수준인가요?</dt>
+          <dd>가솔린 1.6 터보 인스퍼레이션 트림에 파노라마 선루프, 빌트인 캠 2, 나파 가죽 시트 등 적용할 수 있는 모든 선택 사양을 망라한 쏘나타 풀옵션 견적을 진행하면 차량 가격이 약 3,900만 원대에 형성됩니다. 취등록세 7퍼센트 조건이 더해지면 실제 구입 금액은 대략 4,100만 원 선에 근접하게 됩니다. 만약 하이브리드 인스퍼레이션으로 풀옵션을 전개한다면 세금 납부 혜택을 다각도로 적용받더라도 최종 실구매 금액은 약 4,400만 원대까지 다다르게 되므로 불필요한 사양은 영리하게 제해 주는 마이너스 옵션 선택 방식이 추천됩니다.</dd>
+
+          <dt tabindex="0" aria-expanded="false">Q. 신차 장기렌트 계약 시에 주어지는 혜택과 장단점은 무엇이 있을까요?</dt>
+          <dd>장기렌트는 구매자의 개별 신용 등급이나 연령 제한 없이 월 렌트 비용 안에 자동차 취등록세, 세금, 매년 갱신하는 의무 종합 보험료 요금 등이 일체형으로 포함되어 있어 관리가 지극히 간편합니다. 또한 면세 혜택이 적용되는 전용 LPi 가스 모델이나 전비 성능이 출중한 하이브리드 모델을 적극적으로 활용하여 초기 지출 비용 없이 신차를 인도받을 수 있으며 개인 및 법인 사업자는 렌탈료 전액을 경비로 처리하여 법인세를 덜어낼 수 있는 장점이 막강합니다. 다만 번호판이 하, 허, 호 형태의 임대 전용 번호판으로만 교부된다는 점은 보수적인 예비 오너들에겐 다소 심리적인 단점이 되기도 합니다.</dd>
+        </dl>
+      </section>
     </main>
-  </body>
-</html>
+  </div>
+
+  
+
+  <script>
+    function updateTrims() {
+      const engine = document.getElementById('engine').value;
+      const trimSelect = document.getElementById('trim');
+      trimSelect.innerHTML = '';
+
+      const commonTrims = [
+        { value: 'premium', text: '프리미엄' },
+        { value: 's', text: 'S (에스 트림)' },
+        { value: 'exclusive', text: '익스클루시브' },
+        { value: 'inspiration', text: '인스퍼레이션' }
+      ];
+
+      commonTrims.forEach(trim => {
+        const option = document.createElement('option');
+        option.value = trim.value;
+        option.text = trim.text;
+        trimSelect.add(option);
+      });
+
+      calculatePrice();
+    }
+
+    function calculatePrice() {
+      const engine = document.getElementById('engine').value;
+      const trim = document.getElementById('trim').value;
+      const installment = document.getElementById('installment').value;
+
+      let basePrice = 0;
+
+      if (engine === 'gasoline20') {
+        if (trim === 'premium') basePrice = 28260000;
+        else if (trim === 's') basePrice = 29560000;
+        else if (trim === 'exclusive') basePrice = 32510000;
+        else if (trim === 'inspiration') basePrice = 35360000;
+      } else if (engine === 'turbo16') {
+        if (trim === 'premium') basePrice = 28980000;
+        else if (trim === 's') basePrice = 30220000;
+        else if (trim === 'exclusive') basePrice = 33180000;
+        else if (trim === 'inspiration') basePrice = 36030000;
+      } else if (engine === 'lpg20') {
+        if (trim === 'premium') basePrice = 28960000;
+        else if (trim === 's') basePrice = 30260000;
+        else if (trim === 'exclusive') basePrice = 33210000;
+        else if (trim === 'inspiration') basePrice = 36160000;
+      } else if (engine === 'hybrid') {
+        if (trim === 'premium') basePrice = 32700000;
+        else if (trim === 's') basePrice = 33710000;
+        else if (trim === 'exclusive') basePrice = 36740000;
+        else if (trim === 'inspiration') basePrice = 39790000;
+      }
+
+      let optionsCost = 0;
+      if (document.getElementById('opt_sunroof').checked) optionsCost += parseInt(document.getElementById('opt_sunroof').value);
+      if (document.getElementById('opt_hud').checked) optionsCost += parseInt(document.getElementById('opt_hud').value);
+      if (document.getElementById('opt_parking').checked) optionsCost += parseInt(document.getElementById('opt_parking').value);
+      if (document.getElementById('opt_leather').checked) optionsCost += parseInt(document.getElementById('opt_leather').value);
+
+      const subtotal = basePrice + optionsCost;
+      const tax = Math.round(subtotal * 0.07);
+      const total = subtotal + tax;
+
+      document.getElementById('total_price').textContent = total.toLocaleString() + ' 원';
+
+      const months = parseInt(installment);
+      if (months > 0) {
+        let annualRate = 0.045;
+        if (months === 48) annualRate = 0.048;
+        else if (months === 60) annualRate = 0.050;
+
+        const monthlyRate = annualRate / 12;
+        const monthlyPayment = Math.round((total * monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1));
+        document.getElementById('monthly_payment').textContent = '할부 조건 적용 시 월 납입금: 약 ' + monthlyPayment.toLocaleString() + ' 원';
+      } else {
+        document.getElementById('monthly_payment').textContent = '일시불 납부 적용 상태 (수수료 없음)';
+      }
+    }
+
+    document.querySelectorAll('dl dt').forEach((dt) => {
+      dt.addEventListener('click', () => {
+        const expanded = dt.getAttribute('aria-expanded') === 'true' || false;
+        dt.setAttribute('aria-expanded', !expanded);
+        dt.classList.toggle('active');
+      });
+      dt.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          dt.click();
+        }
+      });
+    });
+
+    window.onload = function() {
+      updateTrims();
+    };
+  </script>
+
+  
